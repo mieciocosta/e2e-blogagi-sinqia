@@ -1,47 +1,121 @@
-# Projeto de Testes E2E com Cypress Manipulae
+**Projeto de Testes E2E para Blog do Agi**
 
-Este projeto é configurado com testes end-to-end (E2E) usando Cypress para a plataforma Manipulaê. Os testes automatizados cobrem várias regras de negócio associadas ao processo de cotação de receitas.
+**Descrição**
 
-## Dependências
+Este projeto contém testes end-to-end (E2E) para o Blog do Agi, implementados usando Cypress. Os testes estão focados principalmente na funcionalidade de pesquisa do site.
 
-Para executar os testes, você precisa ter o Node.js e o npm instalados. Os testes foram construídos usando as seguintes dependências principais:
+**Pré-requisitos**
 
-- `cypress` para rodar os testes E2E.
-- `cypress-file-upload` para anexar arquivos nos testes.
+Para executar este projeto, você precisará ter o seguinte instalado em sua máquina:
 
-## Instalação
+* Node.js (recomenda-se a versão mais recente)
+* npm (geralmente vem com Node.js)
 
-Para instalar as dependências, siga os seguintes passos:
+**Configuração do Projeto**
 
-1. Clone o repositório para sua máquina local.
-2. Navegue até a pasta do projeto no seu terminal.
-3. Execute `npm install` para instalar as dependências listadas no arquivo `package.json`.
+1. Clone o repositório:
 
-## Executando os Testes
-
-Para abrir o Cypress e executar os testes interativamente:
-
-```bash
-npm run cypress:open
+```
+git clone [URL_DO_REPOSITÓRIO]
 ```
 
-Esse script abrirá a interface do Cypress, onde você pode visualizar e executar os testes individualmente
+Substitua `[URL_DO_REPOSITÓRIO]` pela URL do seu repositório.
 
-Estrutura do Projeto
-O projeto segue a estrutura padrão do Cypress:
+2. Navegue até a pasta do projeto:
 
-# Regras de Negócio Testadas
+```
+cd caminho_para_o_projeto
+```
 
-Cada teste E2E dentro da pasta `e2e/` verifica uma regra de negócio específica:
+3. Instale as dependências do projeto:
 
-| Regra | Descrição                              | Arquivo de Teste                            |
-| ----- | -------------------------------------- | ------------------------------------------- |
-| RN1   | Campos obrigatórios                    | `rn1_quote_required_fields_spec.cy.js`      |
-| RN2   | Validação do campo Nome                | `rn2_quote_name_validation_spec.cy.js`      |
-| RN3   | Validação do campo Email               | `rn3_quote_email_validation_spec.cy.js`     |
-| RN4   | Validação do campo CEP                 | `rn4_quote_cep_validation_spec.cy.js`       |
-| RN5   | CEP deve ser válido                    | `rn5_quote_cep_integration_spec.cy.js`      |
-| RN6   | Validação do campo Celular             | `rn6_quote_phone_validation_spec.cy.js`     |
-| RN7   | Evitar duplicidade no envio da receita | `rn7_quote_duplicate_submission_spec.cy.js` |
+```
+npm install
+```
 
-Os arquivos de teste estão nomeados de acordo com a regra de negócio que validam, facilitando a identificação e execução dos casos de teste relacionados.
+4. Instale o Cypress (caso não esteja instalado globalmente):
+
+```
+npm install cypress --save-dev
+```
+
+**Executando os Testes**
+
+Você pode executar os testes de duas maneiras:
+
+* **Modo Interativo:**
+
+```
+npx cypress open
+```
+
+Isso abrirá a interface do Cypress, onde você pode selecionar e executar os testes manualmente.
+
+* **Modo Headless:**
+
+```
+npx cypress run
+```
+
+Isso executará todos os testes automaticamente sem abrir a interface gráfica.
+
+**Estrutura do Projeto**
+
+A estrutura do projeto é a seguinte:
+
+```
+cypress/
+  downloads/
+  e2e/
+    blog_search_test.cy.js
+    cenários.md
+    fixtures/
+    plugins/
+      index.js
+  screenshots/
+  support/
+    commands.js
+    e2e.js
+    elements/
+      blog_search_elements.js
+  video/
+```
+
+**Boas Práticas**
+
+Este projeto segue várias boas práticas de teste:
+
+* **Modularidade:** Seletores e dados de teste são mantidos separados dos scripts de teste para fácil manutenção.
+* **Independência dos Testes:** Cada teste é independente e pode ser executado individualmente.
+* **Assertivas Claras e Descritivas:** As assertivas são claras e descrevem exatamente o que está sendo testado.
+
+**Exemplo de Teste**
+
+O seguinte exemplo mostra um teste para a funcionalidade de pesquisa do blog:
+
+```
+describe("Pesquisa no Blog", () => {
+  it("deve retornar resultados relevantes para a consulta", () => {
+    // Abre a página do blog
+    cy.visit("/");
+
+    // Digita a consulta "react" na barra de pesquisa
+    cy.get("input[name='q']").type("react");
+
+    // Clica no botão de pesquisa
+    cy.get("button[type='submit']").click();
+
+    // Verifica se os resultados da pesquisa são relevantes para a consulta
+    cy.get(".post-title").should("have.length.gt(0)");
+    cy.get(".post-title").each((postTitle) => {
+      expect(postTitle.text()).to.match(/react/i);
+    });
+  });
+});
+```
+
+Este teste abre a página do blog, digita a consulta "react" na barra de pesquisa e clica no botão de pesquisa. Em seguida, verifica se os resultados da pesquisa são relevantes para a consulta.
+
+**Conclusão**
+
+Este projeto fornece uma base sólida para a criação de testes E2E para o Blog do Agi. Ele segue várias boas práticas de teste e inclui exemplos de testes para a funcionalidade de pesquisa do site.

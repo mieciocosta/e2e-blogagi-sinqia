@@ -8,8 +8,8 @@ Este projeto contém testes end-to-end (E2E) para o Blog do Agi, implementados u
 
 Para executar este projeto, você precisará ter o seguinte instalado em sua máquina:
 
-* Node.js (recomenda-se a versão mais recente)
-* npm (geralmente vem com Node.js)
+- Node.js (recomenda-se a versão mais recente)
+- npm (geralmente vem com Node.js)
 
 **Configuração do Projeto**
 
@@ -43,7 +43,7 @@ npm install cypress --save-dev
 
 Você pode executar os testes de duas maneiras:
 
-* **Modo Interativo:**
+- **Modo Interativo:**
 
 ```
 npx cypress open
@@ -51,7 +51,7 @@ npx cypress open
 
 Isso abrirá a interface do Cypress, onde você pode selecionar e executar os testes manualmente.
 
-* **Modo Headless:**
+- **Modo Headless:**
 
 ```
 npx cypress run
@@ -85,9 +85,9 @@ cypress/
 
 Este projeto segue várias boas práticas de teste:
 
-* **Modularidade:** Seletores e dados de teste são mantidos separados dos scripts de teste para fácil manutenção.
-* **Independência dos Testes:** Cada teste é independente e pode ser executado individualmente.
-* **Assertivas Claras e Descritivas:** As assertivas são claras e descrevem exatamente o que está sendo testado.
+- **Modularidade:** Seletores e dados de teste são mantidos separados dos scripts de teste para fácil manutenção.
+- **Independência dos Testes:** Cada teste é independente e pode ser executado individualmente.
+- **Assertivas Claras e Descritivas:** As assertivas são claras e descrevem exatamente o que está sendo testado.
 
 **Exemplo de Teste**
 

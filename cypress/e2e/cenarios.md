@@ -120,24 +120,24 @@ cy.get(".post-title").each((postTitle) => {
 
 Aqui estão algumas alterações que fiz para formatar o readme:
 
-* Adicionei cabeçalhos e subtítulos para facilitar a leitura.
-* Usei marcadores para destacar os cenários de teste.
-* Adicionei exemplos de código para ilustrar como cada cenário pode ser implementado.
+- Adicionei cabeçalhos e subtítulos para facilitar a leitura.
+- Usei marcadores para destacar os cenários de teste.
+- Adicionei exemplos de código para ilustrar como cada cenário pode ser implementado.
 
 **Comentários**
 
 Aqui estão alguns comentários sobre o readme:
 
-* Os cenários de teste são bem escritos e cobrem uma gama de casos de uso.
-* Os exemplos de código são úteis para ilustrar como cada cenário pode ser implementado.
-* O readme está bem formatado e fácil de ler.
+- Os cenários de teste são bem escritos e cobrem uma gama de casos de uso.
+- Os exemplos de código são úteis para ilustrar como cada cenário pode ser implementado.
+- O readme está bem formatado e fácil de ler.
 
 **Melhorias**
 
 Aqui estão algumas melhorias que podem ser feitas no readme:
 
-* Adicionar uma seção de instruções para explicar como executar os testes.
-* Adicionar uma seção de referências para fornecer links para recursos adicionais sobre testes E2E.
+- Adicionar uma seção de instruções para explicar como executar os testes.
+- Adicionar uma seção de referências para fornecer links para recursos adicionais sobre testes E2E.
 
 **Conclusão**
 

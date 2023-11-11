@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "cypress": "^13.5.0",
+    "cypress-file-upload": "^5.0.8",
+    "prettier": "^3.0.3"
+  },
+  "scripts": {
+    "cypress:open": "cypress open",
+    "prettier:check": "prettier --check .",
+    "prettier:write": "prettier --write ."
+  }
+}
